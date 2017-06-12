@@ -57,7 +57,6 @@ public class LevelManager : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("" + m_gameState);
 		switch (m_gameState) {
 		case GameState.FlashScreen:
 			UpdateFlashscreen ();
@@ -121,7 +120,7 @@ public class LevelManager : MonoBehaviour {
 		panelCountdown.gameObject.SetActive (true);
 		panelCountdown.StartCountDown (timeToNewMatch);
 		gm.ClearMap ();
-		TextScore.getInstance ().SetScore (scorePlayers [0], scorePlayers [1]);
+		SimpleText.getInstance().SetDisplayText("" + scorePlayers [0] + " : " + scorePlayers [1]);
 
 		if (players [0] != null)
 			Destroy (players [0]);
@@ -170,7 +169,7 @@ public class LevelManager : MonoBehaviour {
 		panelHighScore.SetActive (true);
 
 		gm.ClearMap ();
-		TextHighScore.getInstance ().SetDisplayText (strHighScore);
+		SimpleText.getInstance ().SetDisplayText (strHighScore);
 
 		m_gameState = GameState.HighScore;
 	}

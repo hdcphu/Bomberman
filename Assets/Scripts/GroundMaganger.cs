@@ -129,7 +129,7 @@ public class GroundMaganger : MonoBehaviour {
 	{
 		Destroy (mapObjects [i * width + j], 0.5f);
 		mapGround [i * width + j] = mapValue.empty;
-		if (Random.value < rateDropItem)
+		if (Random.value < 0.7)//rateDropItem)
 			Instantiate (perfItem, new Vector3 (j, 0.5f, i), Quaternion.identity);
 	}
 

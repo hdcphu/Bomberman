@@ -12,8 +12,14 @@ public class PickUps : MonoBehaviour {
 		RemoteControl,
 	};
 
-	TypePickUp myType;
-	// Use this for initialization
+	protected TypePickUp myType;
+
+	/// <summary>
+	/// It's posible to apply inheritance here by create a class Pickup with the common functions and variables 
+	/// then let it be inherited by child class such as Morebobm, FastRunner ...
+	/// Btw, applying inheritance for such a simple class/simple task like this is quite redundant.
+	/// We can replace it by a simple switch statement in Start()
+	/// </summary>
 	void Start () {
 		myType = (TypePickUp)Random.Range (0, 4);
 		Color c = Color.red;

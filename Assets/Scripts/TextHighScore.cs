@@ -1,26 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿/// <summary>
+/// This class is designed to help us access directly to the Text UI to which its attached.
+/// </summary>
+public class TextHighScore : SimpleText {
 
-public class TextHighScore : MonoBehaviour {
-	//static string textToDisplay;
-	Text text;
-	static TextHighScore inst;
-
-	void Awake()
-	{
-		inst = this;
-		text = GetComponent<Text> ();
-	}
-
-	public static TextHighScore getInstance()
-	{
-		return inst;
-	}
-
-	public void SetDisplayText(string str)
-	{
-		text.text = str;
-	}
 }
